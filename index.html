@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+	<title>Document</title>
+	<link rel="shortcut icon" href="https://aomine1745.github.io/ico/aomine.ico">
+</head>
+<body>
+	
+	<h1>Change Spaces</h1>
+
+	<form action="#!" id="form">
+		<input type="text" id="textInput">
+		<input type="submit" value="Enviar">
+	</form>
+	
+	<div id="demo"></div>
+
+	<script>
+		var form = document.getElementById('form');
+		form.addEventListener('submit', function(){
+			var textInput = document.getElementById('textInput');
+			textInputM = textInput.value.replace(/ /g, "-");
+			var demo = document.getElementById('demo');
+			var node = document.createElement('p');
+			var textNode = document.createTextNode(textInputM);
+			node.append(textNode);
+			demo.prepend(node);
+			textInput.value = '';
+			event.preventDefault();
+		});
+	</script>
+</body>
+</html>
